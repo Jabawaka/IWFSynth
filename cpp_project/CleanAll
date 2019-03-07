@@ -1,0 +1,18 @@
+#!/bin/bash
+
+echo ""
+echo "=========== Cleaning development environment =========="
+echo ""
+
+echo "=========== Emptying bin/ folder =========="
+rm -rfv bin/*
+echo "=========== Emptying lib/ folder =========="
+rm -rfv lib/*
+echo "=========== Emptying build/ folder =========="
+rm -rfv build/*
+
+echo ""
+echo "=========== Development environment clean=========="
+date
+echo ""
+exit 0

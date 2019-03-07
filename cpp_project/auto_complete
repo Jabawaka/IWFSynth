@@ -1,0 +1,9 @@
+#!/usr/bin/bash
+
+_BuildExecCompletions()
+{
+    exec_names=`ls src/Executables`
+    COMPREPLY=($(compgen -W "$exec_names" "${COMP_WORDS[1]}"))
+}
+
+complete -F _BuildExecCompletions BuildExec

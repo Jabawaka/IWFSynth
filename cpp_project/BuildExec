@@ -1,0 +1,38 @@
+#!/bin/bash
+
+echo ""
+echo "========== Compiling executable $1 =========="
+
+echo ""
+echo "========== Performing safety checks =========="
+
+if [ "$#" -ne 1 ]; then
+    echo "Wrong number of arguments"
+    echo "  Syntax is ./BuildExec ExecutableName"
+    exit 1
+else
+    echo "Correct number of arguments"
+fi
+
+if [ -d src/Executables/$1 ]; then
+    echo "Found src/Executables/$1"
+else
+    echo "The executable $1 folder does not exist"
+    exit 2
+fi
+
+echo ""
+echo "========== Generating build directory =========="
+cmake src/CMakeLists.txt -Bbuild
+
+echo ""
+echo "========== Compiling from build directory =========="
+cd build/
+make $1
+cd ..
+
+echo ""
+echo "========== Executable $1 built =========="
+date
+echo ""
+exit 0
