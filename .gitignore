@@ -1,4 +1,5 @@
 *.html
 *.wav
 cpp_project/bin
+cpp_project/lib
 cpp_project/build
